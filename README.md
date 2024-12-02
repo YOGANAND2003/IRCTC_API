@@ -31,33 +31,6 @@ This project is a **Railway Management System** designed to simulate key functio
 
 ---
 
-## Additional Features (New)
-
-- **Enhanced Security**:
-  - API key-based admin access for critical operations.
-  - Strict authentication policies to prevent unauthorized access.
-- **Automated Email Notifications**:
-  - Notify users of successful bookings via email.
-  - Admin notifications for critical updates (optional integration with services like SendGrid or Nodemailer).
-- **Search Functionality**:
-  - Search trains by source, destination, or train number.
-  - Filter trains based on seat availability.
-- **Booking Cancellation**:
-  - Allow users to cancel bookings with a refund policy.
-  - Update seat availability dynamically upon cancellation.
-- **Analytics Dashboard (Admin Feature)**:
-  - View booking statistics, popular routes, and user activity logs.
-  - Insights into seat utilization and booking trends.
-- **Payment Gateway Integration**:
-  - Simulated payment system for real-world experience.
-  - Future-ready for integration with payment APIs like Razorpay, Stripe, or PayPal.
-- **Localization Support**:
-  - API support for multiple languages (e.g., Hindi, English) for a broader user base.
-- **API Documentation**:
-  - Comprehensive Swagger-based documentation for all endpoints.
-
----
-
 ## Project Setup
 
 ### Prerequisites

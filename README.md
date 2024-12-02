@@ -1,63 +1,44 @@
 # IRCTC Railway Management System
 
-This project is a **Railway Management System** designed to simulate key functionalities of the IRCTC system. The system enables train seat bookings, checks for train availability, updates train details, and ensures role-based access for users and admins. The backend is built using **Node.js**, **Express.js**, and **MySQL**.
+This project is a **Railway Management System** designed to replicate key functionalities of the IRCTC platform. It provides features like train seat booking, train availability checks, train management, and role-based access control for users and administrators. The backend is developed using **Node.js**, **Express.js**, and **MySQL**.
 
 ---
 
 ## Features
 
-- **User-Friendly Interface**: Easy-to-use API endpoints for seamless user interactions.
 - **User Authentication**:
-  - JWT-based authentication for secure access.
-  - Password encryption using bcrypt for enhanced security.
+  - Secure access using JWT-based authentication.
+  - Password encryption using bcrypt for added security.
+
 - **Train Management**:
-  - View trains available between specific source and destination routes.
-  - Admin functionalities to add, update, or remove trains.
+  - Search for trains available between specific source and destination routes.
+  - Admin functionalities to add, update, or delete train records.
+
 - **Seat Booking System**:
-  - Real-time seat booking with race condition handling to ensure data consistency.
-  - Booking history accessible to users.
-- **Role-Based Access**:
-  - Separate features for users and admins to maintain system integrity.
-  - Admins can update seat availability, add trains, and more.
+  - Real-time seat reservation with race condition handling for data consistency.
+  - Users can view their booking history.
+
+- **Role-Based Access Control**:
+  - Distinct features for users and admins to ensure system integrity.
+  - Admin-exclusive features to manage train details and update seat availability.
+
 - **Error Handling and Input Validation**:
-  - Comprehensive error responses for invalid inputs or actions.
-  - Validation of train details and user data.
-- **Database Efficiency**:
-  - Optimized database schema to handle a large number of trains and bookings.
-  - Referential integrity with foreign key constraints.
+  - Comprehensive error messages for invalid inputs or unauthorized actions.
+  - Validation of train details and user data to maintain consistency.
+
+- **Database Optimization**:
+  - Efficient database schema designed to handle a large volume of trains and bookings.
+  - Foreign key constraints to maintain referential integrity.
+
 - **Modular Codebase**:
-  - Clean and scalable code structure with a separation of concerns.
-  - Use of middleware for reusable logic like authentication.
+  - Clean and scalable architecture with a separation of concerns.
+  - Reusable logic implemented using middleware (e.g., authentication).
 
 ---
 
-## Additional Features (New)
-
-- **Enhanced Security**:
-  - API key-based admin access for critical operations.
-  - Strict authentication policies to prevent unauthorized access.
-- **Automated Email Notifications**:
-  - Notify users of successful bookings via email.
-  - Admin notifications for critical updates (optional integration with services like SendGrid or Nodemailer).
-- **Search Functionality**:
-  - Search trains by source, destination, or train number.
-  - Filter trains based on seat availability.
-- **Booking Cancellation**:
-  - Allow users to cancel bookings with a refund policy.
-  - Update seat availability dynamically upon cancellation.
-- **Analytics Dashboard (Admin Feature)**:
-  - View booking statistics, popular routes, and user activity logs.
-  - Insights into seat utilization and booking trends.
-- **Payment Gateway Integration**:
-  - Simulated payment system for real-world experience.
-  - Future-ready for integration with payment APIs like Razorpay, Stripe, or PayPal.
-- **Localization Support**:
-  - API support for multiple languages (e.g., Hindi, English) for a broader user base.
-- **API Documentation**:
-  - Comprehensive Swagger-based documentation for all endpoints.
+This system offers a secure, efficient, and user-friendly experience for users while providing admins with powerful tools to manage train and booking operations effectively.
 
 ---
-
 ## Project Setup
 
 ### Prerequisites
@@ -85,7 +66,7 @@ JWT_SECRET=Yoganand
 
 1. Clone the repository to your local machine:
    ```bash
-   git clone 
+   git clone https://github.com/YOGANAND2003/IRCTC_API
    cd API_Backend
    ```
 2. Install all necessary dependencies using npm:
@@ -144,8 +125,29 @@ npm start
 ```
 
 ### Project Structure
-
-
+```
+├── API_Backend/
+│   ├── config/
+│   │   └── dbconfig.js         # Database configuration
+│   ├── middleware/
+│   │   └── apiKeyMiddleware.js
+|   |   └── authMiddleware.js   # Authentication middleware
+│   ├── models/
+│   │   ├── booking.js         # Booking operations
+│   │   ├── train.js           # Train operations
+│   │   └── user.js            # User operations
+|   ├── Photos/
+│   │   └── All Photos of Testing  # Photos of Testing and Database  
+│   ├── routes/
+│   │   ├── adminRoutes.js     # Admin routes         
+│   │   └── userRoutes.js      # User routes
+│   └── index.js               # Application entry point
+|   └── .gitignore             # gitignore 
+|   └── package.json           # Project dependencies
+|   ├── .env                   # Environment variables
+|-- README.md                      
+             
+```
 
 
 
@@ -161,11 +163,11 @@ npm start
        * Body:
 
 ```bash
-       {
+ {
   "name": "Jammisetti Yoganand",
   "email": "jammisettyyoganand@gmail.com",
   "password": "Yogi@2003"
-      }
+}
 
 ```
 
@@ -175,10 +177,10 @@ npm start
    - Body:
 
 ```bash
-    {
+{
   "email": "jammisettyyoganand@gmail.com",
   "password": "Yogi@2003"
-    }
+}
 ```
 
 3. Check train availability
@@ -211,9 +213,9 @@ npm start
 
 ```bash
   {
-  "trainId": 1,
-  "seatsToBook": 2
-}
+    "trainId": 1,
+    "seatsToBook": 2
+  }
 
 ```
 
@@ -277,8 +279,8 @@ Note :- Requires JWT authentication.
 
 ```bash
  {
-  "totalSeats": 200,
-  "availableSeats": 150
+    "totalSeats": 200,
+    "availableSeats": 150
  }
 ```
 
@@ -289,10 +291,6 @@ Note :- Requires JWT authentication.
   "message": "Seats updated successfully"
 }
 ```
-
-        * Headers:
-            * x-api-key:  Your admin API key which is stored in .env
-
 ### Running Tests
 
 You can test all the available APIs using Postman. The endpoints are well-structured and follow RESTful conventions.

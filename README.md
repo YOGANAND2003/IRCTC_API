@@ -85,7 +85,7 @@ JWT_SECRET=Yoganand
 
 1. Clone the repository to your local machine:
    ```bash
-   git clone 
+   git clone https://github.com/YOGANAND2003/IRCTC_API
    cd API_Backend
    ```
 2. Install all necessary dependencies using npm:
@@ -144,8 +144,29 @@ npm start
 ```
 
 ### Project Structure
-
-
+```
+├── API_Backend/
+│   ├── config/
+│   │   └── dbconfig.js         # Database configuration
+│   ├── middleware/
+│   │   └── apiKeyMiddleware.js
+|   |   └── authMiddleware.js   # Authentication middleware
+│   ├── models/
+│   │   ├── booking.js         # Booking operations
+│   │   ├── train.js           # Train operations
+│   │   └── user.js            # User operations
+|   ├── Photos/
+│   │   └── All Photos of Testing  # Photos of Testing and Database  
+│   ├── routes/
+│   │   ├── adminRoutes.js     # Admin routes         
+│   │   └── userRoutes.js      # User routes
+│   └── index.js               # Application entry point
+|   └── .gitignore             # gitignore 
+|   └── package.json           # Project dependencies
+|   ├── .env                   # Environment variables
+|-- README.md                      
+             
+```
 
 
 

@@ -1,36 +1,44 @@
 # IRCTC Railway Management System
 
-This project is a **Railway Management System** designed to simulate key functionalities of the IRCTC system. The system enables train seat bookings, checks for train availability, updates train details, and ensures role-based access for users and admins. The backend is built using **Node.js**, **Express.js**, and **MySQL**.
+This project is a **Railway Management System** designed to replicate key functionalities of the IRCTC platform. It provides features like train seat booking, train availability checks, train management, and role-based access control for users and administrators. The backend is developed using **Node.js**, **Express.js**, and **MySQL**.
 
 ---
 
 ## Features
 
-- **User-Friendly Interface**: Easy-to-use API endpoints for seamless user interactions.
 - **User Authentication**:
-  - JWT-based authentication for secure access.
-  - Password encryption using bcrypt for enhanced security.
+  - Secure access using JWT-based authentication.
+  - Password encryption using bcrypt for added security.
+
 - **Train Management**:
-  - View trains available between specific source and destination routes.
-  - Admin functionalities to add, update, or remove trains.
+  - Search for trains available between specific source and destination routes.
+  - Admin functionalities to add, update, or delete train records.
+
 - **Seat Booking System**:
-  - Real-time seat booking with race condition handling to ensure data consistency.
-  - Booking history accessible to users.
-- **Role-Based Access**:
-  - Separate features for users and admins to maintain system integrity.
-  - Admins can update seat availability, add trains, and more.
+  - Real-time seat reservation with race condition handling for data consistency.
+  - Users can view their booking history.
+
+- **Role-Based Access Control**:
+  - Distinct features for users and admins to ensure system integrity.
+  - Admin-exclusive features to manage train details and update seat availability.
+
 - **Error Handling and Input Validation**:
-  - Comprehensive error responses for invalid inputs or actions.
-  - Validation of train details and user data.
-- **Database Efficiency**:
-  - Optimized database schema to handle a large number of trains and bookings.
-  - Referential integrity with foreign key constraints.
+  - Comprehensive error messages for invalid inputs or unauthorized actions.
+  - Validation of train details and user data to maintain consistency.
+
+- **Database Optimization**:
+  - Efficient database schema designed to handle a large volume of trains and bookings.
+  - Foreign key constraints to maintain referential integrity.
+
 - **Modular Codebase**:
-  - Clean and scalable code structure with a separation of concerns.
-  - Use of middleware for reusable logic like authentication.
+  - Clean and scalable architecture with a separation of concerns.
+  - Reusable logic implemented using middleware (e.g., authentication).
 
 ---
 
+This system offers a secure, efficient, and user-friendly experience for users while providing admins with powerful tools to manage train and booking operations effectively.
+
+---
 ## Project Setup
 
 ### Prerequisites

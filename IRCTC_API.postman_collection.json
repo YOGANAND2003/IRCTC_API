@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "d9db26ed-3349-4e71-a077-3d005b1e8aeb",
+		"name": "IRCTC_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29501493"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Jammisetti Yoganand\",\r\n  \"email\": \"jammisettyyoganand@gmail.com\",\r\n  \"password\": \"Yogi@2003\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"jammisettyyoganand@gmail.com\",\r\n  \"password\": \"Yogi@2003\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Train",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"trainNumber\": \"12345\",\r\n  \"source\": \"Pune\",\r\n  \"destination\": \"Delhi\",\r\n  \"totalSeats\": 100\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/admin/addTrain",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"addTrain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Seats",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"totalSeats\": 120,\r\n  \"availableSeats\": 90\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/admin/update-seats/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"update-seats",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Availability",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/availability?source=Pune&destination=Delhi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"availability"
+					],
+					"query": [
+						{
+							"key": "source",
+							"value": "Pune"
+						},
+						{
+							"key": "destination",
+							"value": "Delhi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book train",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJpYXQiOjE3MzMxNjM5MjgsImV4cCI6MTczMzE2NzUyOH0.XIT9G_IlkuxMhZhN2sOcXrXYcPDyQl65TTVg-fOjMYk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"trainId\": 1,\r\n  \"seatsToBook\": 2\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/book",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all bookings",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJpYXQiOjE3MzMxNjM5MjgsImV4cCI6MTczMzE2NzUyOH0.XIT9G_IlkuxMhZhN2sOcXrXYcPDyQl65TTVg-fOjMYk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/user/getAllbookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"getAllbookings"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -155,11 +155,11 @@ npm start
        * Body:
 
 ```bash
-       {
+ {
   "name": "Jammisetti Yoganand",
   "email": "jammisettyyoganand@gmail.com",
   "password": "Yogi@2003"
-      }
+}
 
 ```
 
@@ -169,10 +169,10 @@ npm start
    - Body:
 
 ```bash
-    {
+{
   "email": "jammisettyyoganand@gmail.com",
   "password": "Yogi@2003"
-    }
+}
 ```
 
 3. Check train availability
@@ -205,9 +205,9 @@ npm start
 
 ```bash
   {
-  "trainId": 1,
-  "seatsToBook": 2
-}
+    "trainId": 1,
+    "seatsToBook": 2
+  }
 
 ```
 
@@ -271,8 +271,8 @@ Note :- Requires JWT authentication.
 
 ```bash
  {
-  "totalSeats": 200,
-  "availableSeats": 150
+    "totalSeats": 200,
+    "availableSeats": 150
  }
 ```
 
@@ -283,10 +283,6 @@ Note :- Requires JWT authentication.
   "message": "Seats updated successfully"
 }
 ```
-
-        * Headers:
-            * x-api-key:  Your admin API key which is stored in .env
-
 ### Running Tests
 
 You can test all the available APIs using Postman. The endpoints are well-structured and follow RESTful conventions.

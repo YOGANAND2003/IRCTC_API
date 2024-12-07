@@ -132,7 +132,7 @@ npm start or node index.js
 │   ├── middleware/
 │   │   └── apiKeyMiddleware.js
 |   |   └── authMiddleware.js   # Authentication middleware
-|   |   └── userAuthMiddleware.js #userAuthentication
+|   |   └── userAuthMiddleware.js
 │   ├── models/
 │   │   ├── booking.js         # Booking operations
 │   │   ├── train.js           # Train operations

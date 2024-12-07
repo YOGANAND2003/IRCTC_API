@@ -120,7 +120,7 @@ CREATE TABLE bookings (
 Once the setup is complete, start the server using npm:
 
 ```bash
-npm start
+npm start or node index.js
 
 ```
 
@@ -132,6 +132,7 @@ npm start
 │   ├── middleware/
 │   │   └── apiKeyMiddleware.js
 |   |   └── authMiddleware.js   # Authentication middleware
+|   |   └── userAuthMiddleware.js
 │   ├── models/
 │   │   ├── booking.js         # Booking operations
 │   │   ├── train.js           # Train operations
@@ -166,7 +167,8 @@ npm start
  {
   "name": "Jammisetti Yoganand",
   "email": "jammisettyyoganand@gmail.com",
-  "password": "Yogi@2003"
+  "password": "Yogi@2003",
+  "role":"admin" // or user
 }
 
 ```
@@ -209,6 +211,7 @@ npm start
 4.  Book Seats
     - HTTP Method :- POST
     - Endpoint :- http://localhost:3000/user/book
+    - Header : Authorization token
     - Request Body:
 
 ```bash
@@ -233,6 +236,7 @@ Note :- Requires JWT authentication.
 
     - HTTP Method :- GET
     - Endpoint :- http://localhost:3000/user/getAllbookings
+    - Header : Authorization token
 
     - Response:
 
@@ -249,6 +253,7 @@ Note :- Requires JWT authentication.
 
 
 ```
+Note :- Requires JWT authentication.
 
 #### Admin Routes
 
@@ -256,6 +261,7 @@ Note :- Requires JWT authentication.
 
     - HTTP Method :- POST
     - Endpoint :- http://localhost:3000/admin/addTrain
+    - Header : Authorization token
 
     - Request Body:
 
@@ -270,11 +276,13 @@ Note :- Requires JWT authentication.
     ]
   }
 ```
+Note: Requires JWT authentication
 
 2. Update seat availability
 
    - HTTP Method :- PUT
-   - Endpoint :- http://localhost:3000/admin/update-seats/1
+   - Endpoint :- http://localhost:3000/admin/update-seats/:id
+   - Header : Authorization token
    - Request Body:
 
 ```bash
@@ -291,6 +299,7 @@ Note :- Requires JWT authentication.
   "message": "Seats updated successfully"
 }
 ```
+Note: Requires JWT Authentication
 ### Running Tests
 
 You can test all the available APIs using Postman. The endpoints are well-structured and follow RESTful conventions.

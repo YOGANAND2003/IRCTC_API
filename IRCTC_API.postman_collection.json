@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Jammisetti Yoganand\",\r\n  \"email\": \"jammisettyyoganand@gmail.com\",\r\n  \"password\": \"Yogi@2003\"\r\n}\r\n",
+					"raw": "{\r\n  \"name\": \"Yoganand4\",\r\n  \"email\": \"yoganand4@gmail.com\",\r\n  \"password\": \"Yogi@2003\",\r\n  \"role\":\"user\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -42,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"email\": \"jammisettyyoganand@gmail.com\",\r\n  \"password\": \"Yogi@2003\"\r\n}",
+					"raw": "{\r\n  \"email\": \"yoganand2@gmail.com\",\r\n  \"password\": \"Yogi@2003\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -68,10 +68,16 @@
 			"name": "Add Train",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzMzNTQ5NDQ4LCJleHAiOjE3MzM1NTMwNDh9.fooYSxvt0RP6QUk-U15eMOTfYKpWHfEe5r81YOUtS5A",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"trainNumber\": \"12345\",\r\n  \"source\": \"Pune\",\r\n  \"destination\": \"Delhi\",\r\n  \"totalSeats\": 100\r\n}\r\n",
+					"raw": "{\r\n  \"trainNumber\": \"123456\",\r\n  \"source\": \"Bhopal\",\r\n  \"destination\": \"Vijayawada\",\r\n  \"totalSeats\": 100\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -97,7 +103,13 @@
 			"name": "Update Seats",
 			"request": {
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzMzNTQ5NDQ4LCJleHAiOjE3MzM1NTMwNDh9.fooYSxvt0RP6QUk-U15eMOTfYKpWHfEe5r81YOUtS5A",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\r\n  \"totalSeats\": 120,\r\n  \"availableSeats\": 90\r\n}\r\n",
@@ -108,7 +120,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/admin/update-seats/1",
+					"raw": "http://localhost:3000/admin/update-seats/2",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -117,7 +129,7 @@
 					"path": [
 						"admin",
 						"update-seats",
-						"1"
+						"2"
 					]
 				}
 			},
@@ -141,7 +153,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/user/availability?source=Pune&destination=Delhi",
+					"raw": "http://localhost:3000/user/availability?source=Bhopal&destination=Vijayawada",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -154,11 +166,11 @@
 					"query": [
 						{
 							"key": "source",
-							"value": "Pune"
+							"value": "Bhopal"
 						},
 						{
 							"key": "destination",
-							"value": "Delhi"
+							"value": "Vijayawada"
 						}
 					]
 				}
@@ -172,13 +184,19 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJpYXQiOjE3MzMxNjM5MjgsImV4cCI6MTczMzE2NzUyOH0.XIT9G_IlkuxMhZhN2sOcXrXYcPDyQl65TTVg-fOjMYk",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzMzNTQ5NDQ4LCJleHAiOjE3MzM1NTMwNDh9.fooYSxvt0RP6QUk-U15eMOTfYKpWHfEe5r81YOUtS5A",
 						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"trainId\": 1,\r\n  \"seatsToBook\": 2\r\n}\r\n",
+					"raw": "{\r\n  \"trainId\": 1,\r\n  \"seatsToBook\": 20\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -207,7 +225,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6InVzZXIiLCJpYXQiOjE3MzMxNjM5MjgsImV4cCI6MTczMzE2NzUyOH0.XIT9G_IlkuxMhZhN2sOcXrXYcPDyQl65TTVg-fOjMYk",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzMzNTQ5NDQ4LCJleHAiOjE3MzM1NTMwNDh9.fooYSxvt0RP6QUk-U15eMOTfYKpWHfEe5r81YOUtS5A",
 						"type": "text"
 					}
 				],

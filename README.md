@@ -120,7 +120,7 @@ CREATE TABLE bookings (
 Once the setup is complete, start the server using npm:
 
 ```bash
-npm install or node index.js
+npm start or node index.js
 
 ```
 

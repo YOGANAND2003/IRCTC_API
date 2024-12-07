@@ -406,6 +406,7 @@ Description: An overview of the SQL queries and table structures in MySQL Workbe
 
 #### 1. Register User
 
+
 ![Register User Screenshot](./API_Backend/Photos/Register.png)
 
 Description: This screenshot showcases the Registration of User
